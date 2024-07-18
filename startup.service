@@ -1,0 +1,15 @@
+[Unit]
+Description=Startup Service
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/opt/startup-scripts/script1.sh
+ExecStart=/opt/startup-scripts/script2.sh
+ExecStart=/usr/bin/expect /opt/startup-scripts/connect-vpn.expect
+ExecStart=/bin/su - your_username -c 'pm2 start /path/to/your/project1/app.js'
+ExecStart=/bin/su - your_username -c 'pm2 start /path/to/your/project2/app.js'
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
