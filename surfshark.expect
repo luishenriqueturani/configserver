@@ -1,0 +1,15 @@
+#!/usr/bin/expect -f
+
+spawn sudo surfshark-vpn
+
+expect "Question 1 Prompt"
+send -- "YOUR_ANSWER_TO_QUESTION_1\r"
+
+expect "Question 2 Prompt"
+send -- "YOUR_ANSWER_TO_QUESTION_2\r"
+
+expect "Question 3 Prompt"
+send -- "YOUR_ANSWER_TO_QUESTION_3\r"
+
+
+interact
